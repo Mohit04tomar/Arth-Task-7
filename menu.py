@@ -126,7 +126,8 @@ def lvinde():
 	print("""
 			Press 1 - To increase size of LV attached to your hadoop client
 			Press 2 - To decrease size of LV attached to your hadoop client
-			Press 3 - To exit 
+			Press 3 - To Exit 
+			Press 4 - To Return on Main Menu
 		""")
 	ch=int(input("Enter Your Choice"))
 
@@ -155,6 +156,9 @@ def lvinde():
 	elif ch==3:
 		sys.exit()
 
+	elif ch==4:
+		main()
+
 	else:
 		print('Please Enter a Valid Choice')
 		lvinde()
@@ -165,6 +169,7 @@ def dockfunc():
 		Press 1 - To Start Apache Webserver
 		Press 2 - To Stop Apache Webserver
 		Press 3 - Exit
+		Press 4 - To Return on Main Menu
 		""")
 	ch=int(input("Enter your Choice : "))
 
@@ -199,9 +204,15 @@ def dockfunc():
 		else:
 			print('No webserver Exist')
 
-	else:
-		print('Good Bye')
+	elif ch==3:
 		sys.exit()
+
+	elif ch==4:
+		main()
+
+	else:
+		print('Enter A Valid Choice')
+		dockfunc()
 
 def pyconf():
 	print('Launching Python on Docker \n')
@@ -233,6 +244,7 @@ def pyconf():
 			print('Unable to install Pre-Requisites')
 	else:
 		print('Unable to run Docker Conatiner')
+	print('\nNow Exiting System\n')
 	sys.exit()
 
 
@@ -303,6 +315,7 @@ def hadfunc():
 		Press 2 - To Start Hadoop Slave
 		Press 3 - To Stop Hadoop Slave 
 		Press 4 - To Exit
+		Press 5 - To return on Main Menu
 		""")
 	ch=int(input('Enter Your Choice :- '))
 
@@ -326,17 +339,24 @@ def hadfunc():
 		else:
 			print('Unable to configure hdfs-site.xml')
 			sys.exit()
+	
 	elif ch==4:
 		sys.exit()
+	
+	elif ch==5:
+		main()
 
-if __name__ == '__main__':
-
+def main():
 	print("""
-		Press 1 - To use Hadoop Slave Services with LVM
-		Press 2 - To Increase or Decrease Size of Hadoop Slave
-		Press 3 - To setup and HTTPD server on Docker
-		Press 4 - To setup python on Docker
-		Press 5 - To Exit
+		------------------------------------------------------------
+		#                Python Automation Menu                    #
+		------------------------------------------------------------
+		#  Press 1 - To use Hadoop Slave Services with LVM         #
+		#  Press 2 - To Increase or Decrease Size of Hadoop Slave  #
+		#  Press 3 - To setup and HTTPD server on Docker           #
+		#  Press 4 - To setup python on Docker                     #
+		#  Press 5 - To Exit                                       #
+		------------------------------------------------------------
 		  """)
 	choice=int(input("Enter your Choice -> "))
 
@@ -353,4 +373,11 @@ if __name__ == '__main__':
 		pyconf()
 
 	elif choice==5:
-		sys.exit()
+		sys.exit()	
+
+	else:
+		print('Please Enter A Valid Choice')
+		main()
+
+if __name__ == '__main__':
+	main()
