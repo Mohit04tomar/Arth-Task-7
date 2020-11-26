@@ -113,10 +113,10 @@ def coreconf():
 	if out[0]==0:
 		mip=input('Enter Master IP - ')
 		with open('/etc/hadoop/core-site.xml') as f:
-    		text=f.read().replace('0.0.0.0',mip)
+			text=f.read().replace('0.0.0.0',mip)
 
 		with open('/core-site.xml', "w") as f:
-    		f.write(text)
+			f.write(text)
 		print('hdfs-site.xml configured')
 
 	else:
@@ -338,7 +338,7 @@ if __name__ == '__main__':
 		Press 4 - To setup python on Docker
 		Press 5 - To Exit
 		  """)
-	choice=int(input("Enter your Choice"))
+	choice=int(input("Enter your Choice -> "))
 
 	if choice==1:
 		hadfunc()
