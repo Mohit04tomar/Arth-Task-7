@@ -27,8 +27,12 @@ def install_hadoop():
 
 def lvm_integration():
 	print("""
-		Press 1 : To list all the attached devices
-		Press 2 : To Continue
+	----------------------------------------------
+	#    Attached Block Storage Device Menu	     #
+	----------------------------------------------
+	# Press 1 : To list all the attached devices #
+	# Press 2 : To Continue                      #
+	----------------------------------------------
 	""")
 	inp=int(input())
 
@@ -124,12 +128,16 @@ def coreconf():
 
 def lvinde():
 	print("""
-			Press 1 - To increase size of LV attached to your hadoop client
-			Press 2 - To decrease size of LV attached to your hadoop client
-			Press 3 - To Exit 
-			Press 4 - To Return on Main Menu
+	-------------------------------------------------------------------
+	#                           LVM Menu                              #
+	-------------------------------------------------------------------
+	# Press 1 - To increase size of LV attached to your hadoop client #
+	# Press 2 - To decrease size of LV attached to your hadoop client #
+	# Press 3 - To Exit                                               #
+	# Press 4 - To Return on Main Menu                                #
+	-------------------------------------------------------------------
 		""")
-	ch=int(input("Enter Your Choice"))
+	ch=int(input("Enter Your Choice  :  "))
 
 	if ch==1:
 		lvname=input("Enter Your LV Name ( /dev/vg/lv ) :- ")
@@ -166,12 +174,16 @@ def lvinde():
 
 def dockfunc():
 	print("""
-		Press 1 - To Start Apache Webserver
-		Press 2 - To Stop Apache Webserver
-		Press 3 - Exit
-		Press 4 - To Return on Main Menu
+	    ---------------------------------------
+	    #      Apache Webserver Menu          #
+	    ---------------------------------------	
+	    # Press 1 - To Start Apache Webserver #
+	    # Press 2 - To Stop Apache Webserver  #
+	    # Press 3 - Exit                      #
+	    # Press 4 - To Return on Main Menu    #
+	    ---------------------------------------
 		""")
-	ch=int(input("Enter your Choice : "))
+	ch=int(input("Enter your Choice :   "))
 
 	if ch==1:
 		print('Setting Up Webserver on Docker')
@@ -311,11 +323,15 @@ def Slavconf():
 
 def hadfunc():
 	print("""
-		Press 1 - To configure Hadoop Slave with LVM functionality First Time
-		Press 2 - To Start Hadoop Slave
-		Press 3 - To Stop Hadoop Slave 
-		Press 4 - To Exit
-		Press 5 - To return on Main Menu
+   ---------------------------------------------------------------------------
+   #                     Hadoop Data Node Facility Menu	                     #
+   ---------------------------------------------------------------------------
+   # Press 1 - To configure Hadoop Slave with LVM functionality First Time   #
+   # Press 2 - To Start Hadoop Slave                                         #
+   # Press 3 - To Stop Hadoop Slave                                          #
+   # Press 4 - To Exit                                                       #
+   # Press 5 - To return on Main Menu                                        #
+   ---------------------------------------------------------------------------
 		""")
 	ch=int(input('Enter Your Choice :- '))
 
@@ -348,16 +364,16 @@ def hadfunc():
 
 def main():
 	print("""
-		------------------------------------------------------------
-		#                Python Automation Menu                    #
-		------------------------------------------------------------
-		#  Press 1 - To use Hadoop Slave Services with LVM         #
-		#  Press 2 - To Increase or Decrease Size of Hadoop Slave  #
-		#  Press 3 - To setup and HTTPD server on Docker           #
-		#  Press 4 - To setup python on Docker                     #
-		#  Press 5 - To Exit                                       #
-		------------------------------------------------------------
-		  """)
+	------------------------------------------------------------
+	#                Python Automation Menu                    #	
+	------------------------------------------------------------
+	#  Press 1 - To use Hadoop Slave Services with LVM         #
+	#  Press 2 - To Increase or Decrease Size of Hadoop Slave  #
+	#  Press 3 - To setup and HTTPD server on Docker           #
+	#  Press 4 - To setup python on Docker                     #
+	#  Press 5 - To Exit                                       #
+	------------------------------------------------------------
+	  """)
 	choice=int(input("Enter your Choice -> "))
 
 	if choice==1:
